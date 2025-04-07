@@ -324,7 +324,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // Ruta de prueba
-app.get('/hola', (req, res) => {
+app.get('/api/hola', (req, res) => {
   res.send('👋 ¡Hola! El backend con Express está funcionando.');
 });
 
