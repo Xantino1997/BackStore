@@ -318,17 +318,14 @@
 
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const serverless = require('serverless-http');
 
-// Middleware para parsear JSON
 app.use(express.json());
 
-// Ruta de prueba
 app.get('/api/hola', (req, res) => {
-  res.send('👋 ¡Hola! El backend con Express está funcionando.');
+  res.send('👋 ¡Hola! El backend con Express está funcionando en Vercel.');
 });
 
-// Iniciar servidor
-app.listen(PORT, () => {
-  console.log(`Servidor escuchando en http://localhost:${PORT}`);
-});
+module.exports = app;
+module.exports.handler = serverless(app);
+
