@@ -318,7 +318,6 @@
 
 const express = require('express');
 const app = express();
-const serverless = require('serverless-http');
 
 app.use(express.json());
 
@@ -326,6 +325,4 @@ app.get('/api/hola', (req, res) => {
   res.send('👋 ¡Hola! El backend con Express está funcionando en Vercel.');
 });
 
-module.exports = app;
-module.exports.handler = serverless(app);
 
